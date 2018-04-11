@@ -16,7 +16,7 @@ class Handle(object):
             timestamp = data.timestamp
             nonce = data.nonce
             echostr = data.echostr
-            token = "jinshen2017success" #请按照公众平台官网\基本配置中信息填写
+            token = "your_token" #请按照公众平台官网\基本配置中信息填写
 
             list = [token, timestamp, nonce]
             list.sort()
@@ -37,7 +37,7 @@ class Handle(object):
             print "Handle Post webdata is ", webData   #后台打日志
             recMsg = receive.parse_xml(webData)
             xml = etree.fromstring(webData)
-            #进行XML解析,其实receive模块里边也解析了一遍，但是我不知道该怎么调用
+            #进行XML解析
             if isinstance(recMsg, receive.Msg):
                 toUser = recMsg.FromUserName
                 fromUser = recMsg.ToUserName
